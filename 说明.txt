@@ -1,0 +1,12 @@
+
+1、先将要标记的类别名加入label.txt
+2、将原图片加入 data/img_data 中
+	记得先清空文件夹
+3、labelme启动：在命令行中执行以下语句
+	labelme --labels D:\Files\_datasets\VOC_Seg\label.txt
+4、在labelme中修改json保存位置为 data/data_annotated
+5、全部完成后使用执行以下脚本之一：（注意要在vs中打开，不然会路径错误）
+	main.py 是生成RGB掩码图片，而且只有训练集和验证集没有测试集
+	VOC.py 是生成灰度图片，有三个数据集，且输出皆为png图片
+6、main.py生成的VOCdevkit可以直接使用根据txt文件读取
+7、VOC.py生成的data不通用，要分别读取
